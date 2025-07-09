@@ -1,0 +1,32 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model orders {
+  order_id          String    @id
+  user_id           String?
+  item_id           String?
+  item_name         String?
+  category          String?
+  price             Decimal?  @db.Decimal
+  quantity          Int?
+  total_price       Decimal?  @db.Decimal
+  veg               String?
+  branch_id         String?
+  location          String?
+  order_time        DateTime? @db.Timestamp(6)
+  payment_mode      String?
+  delivery_time_min Int?
+  user_rating       Decimal?  @db.Decimal
+  refund_flag       Boolean?
+  offer_applied     Boolean?
+  offer_code        String?
+  discount_amount   Decimal?  @db.Decimal
+  refund_reason     String?
+  pincode           Int?
+}
