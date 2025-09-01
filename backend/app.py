@@ -244,7 +244,7 @@ def call_groq(prompt):
         print(f"Groq API error: {e}")
         return "Sorry, there was an error processing your request.", []
 
-# Text-to-speech functions (keeping your existing implementation)
+# Text-to-speech functions
 def text_to_speech(text, language="en", voice_name=None):
     try:
         from gtts import gTTS
