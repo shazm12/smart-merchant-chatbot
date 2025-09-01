@@ -20,7 +20,7 @@ app = Flask(__name__)
 app.secret_key = os.getenv('SECRET_KEY', 'your-secret-key-here')  # Add to .env file
 CORS(app, supports_credentials=True)
 
-# In-memory conversation storage (use Redis/Database for production)
+# In memory for now
 conversation_store = {}
 
 # Load business data
@@ -81,7 +81,7 @@ class ConversationManager:
 # Initialize conversation manager
 conv_manager = ConversationManager()
 
-# Your existing helper functions remain the same...
+
 def translate_text(text, from_lang="en", to_lang="en"):
     try:
         if from_lang == to_lang:
